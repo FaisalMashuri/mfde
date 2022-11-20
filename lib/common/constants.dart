@@ -9,7 +9,7 @@ const String nowPlaying = "Now Playing";
 const String watchlist = "Watchlist";
 const String failedConnect = "Failed to connect to the network";
 const String successWatchlist = "Success add to Watchlist";
-const String failedWatchlist = "Success remove a Watchlist";
+const String removeWatchlist = "Success remove a Watchlist";
 
 // colors
 const Color kRichBlack = Color(0xFF000814);

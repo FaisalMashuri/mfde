@@ -17,11 +17,13 @@ import 'package:provider/provider.dart';
 
 class HomeTvSeriesPage extends StatefulWidget {
   static const ROUTE_NAME = '/tv_page_home';
+  
   @override
   _HomeTvSeriesPageState createState() => _HomeTvSeriesPageState();
 }
 
 class _HomeTvSeriesPageState extends State<HomeTvSeriesPage> {
+  
   @override
   void initState() {
     super.initState();

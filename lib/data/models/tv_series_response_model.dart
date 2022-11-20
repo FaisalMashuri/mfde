@@ -2,25 +2,25 @@ import 'dart:convert';
 import 'package:ditonton/data/models/tv_series_model.dart';
 import 'package:equatable/equatable.dart';
 
-TvResponse tvSeriesResponseFromJson(String str) => TvResponse.fromJson(json.decode(str));
+TvResponse tvSeriesResponseFromJson(String str) =>
+    TvResponse.fromJson(json.decode(str));
 
 String tvSeriesResponseToJson(TvResponse data) => json.encode(data.toJson());
 
 class TvResponse extends Equatable {
   TvResponse({
-    required this.page,
+    this.page,
     required this.results,
-    required this.totalPages,
-    required this.totalResults,
+    this.totalPages,
+    this.totalResults,
   });
 
-  final int page;
+  final int? page;
   final List<TvModel> results;
-  final int totalPages;
-  final int totalResults;
+  final int? totalPages;
+  final int? totalResults;
 
-  factory TvResponse.fromJson(Map<String, dynamic> json) =>
-      TvResponse(
+  factory TvResponse.fromJson(Map<String, dynamic> json) => TvResponse(
         page: json["page"],
         results: List<TvModel>.from((json["results"] as List)
             .map((x) => TvModel.fromJson(x))

@@ -23,6 +23,7 @@ class TvRepositoryImpl implements TvRepository {
   Future<Either<Failure, List<TvSeries>>> getNowPlayingTv() async {
     try {
       final result = await remoteDataSource.getNowPlayingTv();
+      print(result);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
       return Left(ServerFailure(''));
@@ -83,8 +84,7 @@ class TvRepositoryImpl implements TvRepository {
   @override
   Future<Either<Failure, String>> saveWatchlist(TvDetail tvTable) async {
     try {
-      final result = await localDataSource
-          .insertTvWatchlist(TvTable.fromEntity(tvTable));
+      final result = await localDataSource.insertTvWatchlist(TvTable.fromEntity(tvTable));
       return Right(result);
     } on DatabaseException catch (e) {
       return Left(DatabaseFailure(e.message));

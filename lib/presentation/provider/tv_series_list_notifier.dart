@@ -47,6 +47,7 @@ class TvSeriesListNotifier extends ChangeNotifier {
     notifyListeners();
 
     final result = await getNowPlayingTvUseCase.execute();
+    print(result);
     result.fold(
       (failure) {
         _nowPlayingState = RequestState.Error;
