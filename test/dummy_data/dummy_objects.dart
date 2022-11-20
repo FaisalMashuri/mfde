@@ -62,19 +62,17 @@ final testMovieMap = {
 };
 
 final testTV = TvSeries(
-  originCountry: ["Korea"],
-  originalLanguage: "English",
-  backdropPath: '/qw3J9cNeLioOLoR68WX7z79aCdK.jpg',
-  firstAirDate: '2021-09-17',
-  genreIds: [10759, 9648, 18],
-  id: 93405,
-  name: 'Squid Game',
-  originalName: '오징어 게임',
-  overview: "Hundreds of cash-strapped players accept a strange invitation to compete in children's games—with high stakes. But, a tempting prize awaits the victor.",
-  popularity: 3575.758,
-  posterPath: '/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg',
-  voteAverage: 7.8,
-  voteCount: 8404,
+  backdropPath: '/rkB4LyZHo1NHXFEDHl9vSD9r1lI.jpg',
+  genreIds: const [16, 10765, 10759, 18],
+  id: 94605,
+  originalName: 'Arcane',
+  overview: 'Amid the stark discord of twin cities Piltover and Zaun, two sisters fight on rival sides of a war between magic technologies and clashing convictions.',
+  popularity: 107.593,
+  posterPath: '/xQ6GijOFnxTyUzqiwGpVxgfcgqI.jpg',
+  firstAirDate: '2021-11-06',
+  name: 'Arcane',
+  voteAverage: 9.066,
+  voteCount: 2311,
 );
 
 final testTVList = [testTV];
