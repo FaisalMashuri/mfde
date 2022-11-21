@@ -6,7 +6,6 @@ import 'package:mockito/mockito.dart';
 
 import '../../helpers/test_helper.mocks.dart';
 
-
 void main() {
   late GetNowPlayingMovies usecase;
   late MockMovieRepository mockMovieRepository;

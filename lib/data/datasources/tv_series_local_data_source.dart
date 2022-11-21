@@ -21,7 +21,6 @@ class TvLocalDataSourceImpl implements TvLocalDataSource {
       await databaseHelper.insertTvWatchlist(tv);
       return successWatchlist;
     } catch (e) {
-      print(e);
       throw DatabaseException(e.toString());
     }
   }

@@ -364,6 +364,7 @@ void main() {
     });
   });
 
+  
   group('remove watchlist', () {
     test('should return success message when remove successful', () async {
       // arrange

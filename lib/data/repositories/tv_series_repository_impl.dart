@@ -10,6 +10,7 @@ import 'package:ditonton/domain/entities/tv_series_detail.dart';
 import 'package:ditonton/common/exception.dart';
 import 'package:ditonton/domain/repositories/tv_series_repository.dart';
 
+
 class TvRepositoryImpl implements TvRepository {
   final TvRemoteDataSource remoteDataSource;
   final TvLocalDataSource localDataSource;
@@ -89,7 +90,8 @@ class TvRepositoryImpl implements TvRepository {
     } on DatabaseException catch (e) {
       return Left(DatabaseFailure(e.message));
     } catch (e) {
-      throw e;
+      // throw e;
+      return Left(DatabaseFailure("error"));
     }
   }
 
