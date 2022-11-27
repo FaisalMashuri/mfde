@@ -1,5 +1,4 @@
-import 'package:ditonton/common/constants.dart';
-import 'package:ditonton/common/exception.dart';
+import 'package:inti/inti.dart';
 import 'package:ditonton/data/datasources/db/database_helper.dart';
 import 'package:ditonton/data/models/tv_series_table.dart';
 
@@ -21,7 +20,6 @@ class TvLocalDataSourceImpl implements TvLocalDataSource {
       await databaseHelper.insertTvWatchlist(tv);
       return successWatchlist;
     } catch (e) {
-      print(e);
       throw DatabaseException(e.toString());
     }
   }

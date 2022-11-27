@@ -9,20 +9,20 @@ class TvDetailModel extends Equatable {
     required this.backdropPath,
     required this.episodeRunTime,
     required this.genres,
-    required this.homepage,
+    this.homepage,
     required this.id,
     required this.name,
     required this.numberOfEpisodes,
     required this.numberOfSeasons,
-    required this.originalLanguage,
-    required this.originalName,
+    this.originalLanguage,
+    this.originalName,
     required this.overview,
-    required this.popularity,
+    this.popularity,
     required this.posterPath,
     required this.seasons,
-    required this.status,
-    required this.tagline,
-    required this.type,
+    this.status,
+     this.tagline,
+    this.type,
     required this.voteAverage,
     required this.voteCount,
   });
@@ -32,25 +32,24 @@ class TvDetailModel extends Equatable {
   final List<int> episodeRunTime;
 
   final List<GenreModel> genres;
-  final String homepage;
+  final String? homepage;
   final int id;
   final String name;
   final int numberOfEpisodes;
   final int numberOfSeasons;
-  final String originalLanguage;
-  final String originalName;
+  final String? originalLanguage;
+  final String? originalName;
   final String overview;
-  final double popularity;
+  final double? popularity;
   final String posterPath;
   final List<SeasonModel> seasons;
-  final String status;
-  final String tagline;
-  final String type;
+  final String? status;
+  final String? tagline;
+  final String? type;
   final double voteAverage;
   final int voteCount;
 
-  factory TvDetailModel.fromJson(Map<String, dynamic> json) =>
-      TvDetailModel(
+  factory TvDetailModel.fromJson(Map<String, dynamic> json) => TvDetailModel(
         adult: json["adult"],
         backdropPath: json["backdrop_path"],
         episodeRunTime: List<int>.from(json["episode_run_time"].map((x) => x)),

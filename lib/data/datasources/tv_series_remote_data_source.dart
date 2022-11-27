@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'package:ditonton/common/exception.dart';
+import 'package:inti/inti.dart';
 import 'package:ditonton/data/models/tv_series_detail.dart';
 import 'package:ditonton/data/models/tv_series_model.dart';
 import 'package:ditonton/data/models/tv_series_response_model.dart';

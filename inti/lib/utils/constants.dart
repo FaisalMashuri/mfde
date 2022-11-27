@@ -1,0 +1,9 @@
+const String BASE_IMAGE_URL = 'https://image.tmdb.org/t/p/w500';
+const String seeMore = "See More";
+const String topTv = "Top TV";
+const String popularTv = "Popular TV";
+const String nowPlaying = "Now Playing";
+const String watchlist = "Watchlist";
+const String failedConnect = "Failed to connect to the network";
+const String successWatchlist = "Success add to Watchlist";
+const String removeWatchlist = "Success remove a Watchlist";

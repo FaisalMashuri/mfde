@@ -1,18 +1,16 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:ditonton/common/exception.dart';
-import 'package:ditonton/common/failure.dart';
+import 'package:inti/inti.dart';
 import 'package:ditonton/data/models/genre_model.dart';
 import 'package:ditonton/data/models/season_model..dart';
 import 'package:ditonton/data/models/tv_series_detail.dart';
 import 'package:ditonton/data/models/tv_series_model.dart';
-import 'package:ditonton/data/models/tv_series_table.dart';
 import 'package:ditonton/data/repositories/tv_series_repository_impl.dart';
-import 'package:ditonton/domain/entities/genre.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
+
 
 import '../../dummy_data/dummy_objects.dart';
 import '../../helpers/test_helper.mocks.dart';

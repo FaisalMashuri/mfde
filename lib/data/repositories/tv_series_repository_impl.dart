@@ -1,14 +1,14 @@
 import 'dart:io';
 import 'package:dartz/dartz.dart';
-import 'package:ditonton/common/constants.dart';
-import 'package:ditonton/common/failure.dart';
+import 'package:inti/inti.dart' as inti;
 import 'package:ditonton/data/datasources/tv_series_local_data_source.dart';
 import 'package:ditonton/data/datasources/tv_series_remote_data_source.dart';
 import 'package:ditonton/data/models/tv_series_table.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
 import 'package:ditonton/domain/entities/tv_series_detail.dart';
-import 'package:ditonton/common/exception.dart';
 import 'package:ditonton/domain/repositories/tv_series_repository.dart';
+import 'package:inti/inti.dart';
+
 
 class TvRepositoryImpl implements TvRepository {
   final TvRemoteDataSource remoteDataSource;
@@ -20,20 +20,20 @@ class TvRepositoryImpl implements TvRepository {
   });
 
   @override
-  Future<Either<Failure, List<TvSeries>>> getNowPlayingTv() async {
+  Future<Either<inti.Failure, List<TvSeries>>> getNowPlayingTv() async {
     try {
       final result = await remoteDataSource.getNowPlayingTv();
       print(result);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
-      return Left(ServerFailure(''));
+      return Left(inti.ServerFailure(''));
     } on SocketException {
-      return Left(ConnectionFailure(failedConnect));
+      return Left(inti.ConnectionFailure(inti.failedConnect));
     }
   }
 
   @override
-  Future<Either<Failure, List<TvSeries>>> getPopularTv() async {
+  Future<Either<inti.Failure, List<TvSeries>>> getPopularTv() async {
     try {
       final result = await remoteDataSource.getPopularTv();
       return Right(result.map((model) => model.toEntity()).toList());
@@ -89,7 +89,8 @@ class TvRepositoryImpl implements TvRepository {
     } on DatabaseException catch (e) {
       return Left(DatabaseFailure(e.message));
     } catch (e) {
-      throw e;
+      // throw e;
+      return Left(DatabaseFailure("error"));
     }
   }
 
