@@ -39,6 +39,10 @@ dependencies:
   sqflite: ^2.0.0+3
   path_provider: ^2.0.2
   test_cov_console: ^0.2.2
+  about: 
+    path: about
+  inti:
+    path: inti
 
 dev_dependencies:
   mockito: ^5.0.8

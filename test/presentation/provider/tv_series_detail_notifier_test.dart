@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:ditonton/common/failure.dart';
-import 'package:ditonton/common/state_enum.dart';
+import 'package:inti/inti.dart';
+
 import 'package:ditonton/domain/entities/tv_series.dart';
 import 'package:ditonton/domain/usecases/get_detail_tv_series_usecase.dart';
 import 'package:ditonton/domain/usecases/get_tv_series_recommendation_usecase.dart';
@@ -222,7 +222,7 @@ void main() {
     test('should return error when data is unsuccessful', () async {
       // arrange
       when(mockGetMovieDetail.execute(tId))
-          .thenAnswer((_) async => Left(ServerFailure('Server Failure')));
+          .thenAnswer((_) async => Left(ServerFailure("Failure")));
       when(mockGetMovieRecommendations.execute(tId))
           .thenAnswer((_) async => Right(tTvList));
       // act
