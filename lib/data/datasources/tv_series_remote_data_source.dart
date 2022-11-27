@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:ditonton/domain/entities/tv_series_detail.dart';
 import 'package:inti/inti.dart';
 import 'package:ditonton/data/models/tv_series_detail.dart';
 import 'package:ditonton/data/models/tv_series_model.dart';

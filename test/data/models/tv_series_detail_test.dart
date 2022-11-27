@@ -1,6 +1,6 @@
-import 'package:ditonton/data/models/genre_model.dart';
+
 import 'package:ditonton/data/models/tv_series_detail.dart';
-import 'package:ditonton/domain/entities/genre.dart';
+import 'package:inti/inti.dart';
 import 'package:ditonton/domain/entities/tv_series_detail.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -9,7 +9,7 @@ void main() {
     seasons: [],
     adult: true,
     backdropPath: 'backdropPath',
-    genres: [Genre(id: 1, name: 'Action')],
+    genres: [GenreModel(id: 1, name: 'Action')],
     id: 1,
     numberOfEpisodes: 2,
     name: 'name',

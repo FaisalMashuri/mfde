@@ -13,7 +13,6 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
 import '../../dummy_data/dummy_objects.dart';
-import 'movie_detail_notifier_test.mocks.dart';
 import 'tv_series_detail_notifier_test.mocks.dart';
 
 @GenerateMocks([
@@ -119,7 +118,7 @@ void main() {
     });
   });
 
-  group('Get Movie Recommendations', () {
+  group('Get Tv Recommendations', () {
     test('should get data from the usecase', () async {
       // arrange
       _arrangeUsecase();
@@ -222,7 +221,7 @@ void main() {
     test('should return error when data is unsuccessful', () async {
       // arrange
       when(mockGetMovieDetail.execute(tId))
-          .thenAnswer((_) async => Left(ServerFailure("Failure")));
+          .thenAnswer((_) async => Left(ServerFailure("Server Failure")));
       when(mockGetMovieRecommendations.execute(tId))
           .thenAnswer((_) async => Right(tTvList));
       // act

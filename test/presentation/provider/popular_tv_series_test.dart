@@ -6,7 +6,6 @@ import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 import 'package:dartz/dartz.dart';
 import 'package:inti/inti.dart';
-import 'popular_movies_notifier_test.mocks.dart';
 import 'tv_series_list_notifier_test.mocks.dart';
 
 @GenerateMocks([GetPopularTvUseCase])

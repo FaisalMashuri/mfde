@@ -1,5 +1,4 @@
-import 'package:ditonton/data/models/genre_model.dart';
-import 'package:ditonton/data/models/season_model..dart';
+import 'package:inti/inti.dart';
 import 'package:ditonton/domain/entities/tv_series_detail.dart';
 import 'package:equatable/equatable.dart';
 
@@ -21,9 +20,9 @@ class TvDetailModel extends Equatable {
     required this.posterPath,
     required this.seasons,
     this.status,
-     this.tagline,
+    this.tagline,
     this.type,
-    required this.voteAverage,
+    this.voteAverage,
     required this.voteCount,
   });
 
@@ -46,7 +45,7 @@ class TvDetailModel extends Equatable {
   final String? status;
   final String? tagline;
   final String? type;
-  final double voteAverage;
+  final double? voteAverage;
   final int voteCount;
 
   factory TvDetailModel.fromJson(Map<String, dynamic> json) => TvDetailModel(

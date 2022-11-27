@@ -1,5 +1,4 @@
 import 'package:inti/inti.dart';
-import 'package:ditonton/data/datasources/db/database_helper.dart';
 import 'package:ditonton/data/models/tv_series_table.dart';
 
 abstract class TvLocalDataSource {

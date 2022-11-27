@@ -43,6 +43,8 @@ dependencies:
     path: about
   inti:
     path: inti
+  movie: 
+    path: movie
 
 dev_dependencies:
   mockito: ^5.0.8
