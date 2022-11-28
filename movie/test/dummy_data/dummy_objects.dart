@@ -23,7 +23,7 @@ final testMovieList = [testMovie];
 const testMovieDetail = MovieDetail(
   adult: false,
   backdropPath: 'backdropPath',
-  genres: [GenreModel(id: 1, name: 'Action')],
+  genres: [Genre(id: 1, name: 'Action')],
   id: 1,
   originalTitle: 'originalTitle',
   overview: 'overview',

@@ -8,7 +8,6 @@ import 'dart:convert' as _i16;
 import 'dart:typed_data' as _i17;
 
 import 'package:dartz/dartz.dart' as _i2;
-import 'package:ditonton/data/models/tv_series_table.dart' as _i14;
 import 'package:http/http.dart' as _i5;
 import 'package:http/src/io_client.dart' as _i15;
 import 'package:http/src/io_streamed_response.dart' as _i4;
@@ -21,6 +20,7 @@ import 'package:movie/domain/entities/movie.dart' as _i9;
 import 'package:movie/domain/entities/movie_detail.dart' as _i10;
 import 'package:movie/movie.dart' as _i6;
 import 'package:sqflite/sqflite.dart' as _i13;
+import 'package:tv/tv.dart' as _i14;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values

@@ -26,6 +26,10 @@ dependencies:
     path: ../about
   movie:
     path: ../movie
+  tv:
+    path: ../tv
+  search:
+    path: ../search
   ditonton:
     path: ../
 
