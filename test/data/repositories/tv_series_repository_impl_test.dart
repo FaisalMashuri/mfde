@@ -1,17 +1,15 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
+import 'package:ditonton/data/models/tv_series_table.dart';
+import 'package:ditonton/domain/entities/tv_series_detail.dart';
 import 'package:inti/inti.dart';
-import 'package:ditonton/data/models/genre_model.dart';
-import 'package:ditonton/data/models/season_model..dart';
 import 'package:ditonton/data/models/tv_series_detail.dart';
 import 'package:ditonton/data/models/tv_series_model.dart';
 import 'package:ditonton/data/repositories/tv_series_repository_impl.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-
-
 import '../../dummy_data/dummy_objects.dart';
 import '../../helpers/test_helper.mocks.dart';
 
@@ -186,37 +184,34 @@ void main() {
 
   group('Get TvSeries Detail', () {
     const tId = 1;
-    var tTvSeriesDetailResponse = TvDetailModel(
-      adult: false,
-      numberOfSeasons: 1,
-      episodeRunTime: [30],
-      status: "",
-      originalLanguage: "en",
-      backdropPath: "/path.jpg",
-      homepage: "https://google.com",
-      seasons: [
-        SeasonModel(
-            airDate: "2022-04-22",
-            episodeCount: 8,
-            id: 1,
-            name: "Name",
-            overview: "Overview",
-            posterPath: "/path.jpg",
-            seasonNumber: 1)
-      ],
-      tagline: "Tagline",
-      genres: [GenreModel(id: 18, name: "drama")],
-      id: 1,
-      originalName: "Original Name",
-      numberOfEpisodes: 30,
-      type: "Type",
-      overview: "Overview",
-      popularity: 1.0,
-      posterPath: "/path.jpg",
-      name: "Name",
-      voteAverage: 1.0,
-      voteCount: 1,
+    final tTvSeriesDetailResponse = TvDetailModel(
+      seasons: [],
+    adult: true,
+    backdropPath: 'backdropPath',
+    genres: [GenreModel(id: 1, name: 'Action')],
+    id: 1,
+    numberOfEpisodes: 2,
+    name: 'name',
+    numberOfSeasons: 2,
+    overview: 'overview',
+    posterPath: 'posterPath',
+    episodeRunTime: [2],
+    voteAverage: 1,
+    voteCount: 1,
     );
+
+    test(
+        'should return Movie data when the call to remote data source is successful',
+        () async {
+      // arrange
+      when(mockRemoteDataSource.getTvDetail(tId))
+          .thenAnswer((_) async => tTvSeriesDetailResponse);
+      // act
+      final result = await repository.getTvDetail(tId);
+      // assert
+      verify(mockRemoteDataSource.getTvDetail(tId));
+      expect(result, equals(Right(testTVDetail)));
+    });
 
     test(
         'should return Server Failure when the call to remote data source is unsuccessful',
@@ -331,4 +326,78 @@ void main() {
           result, Left(ConnectionFailure('Failed to connect to the network')));
     });
   });
+
+  
+  
+  group('save watchlist', () {
+    test('should return success message when saving successful', () async {
+      // arrange
+      when(mockLocalDataSource.insertTvWatchlist(TvTable.fromEntity(testTVDetail)))
+          .thenAnswer((_) async => 'Added to Watchlist');
+      // act
+      final result = await repository.saveWatchlist(testTVDetail);
+      // assert
+      expect(result, Right('Added to Watchlist'));
+    });
+
+    test('should return DatabaseFailure when saving unsuccessful', () async {
+      // arrange
+      when(mockLocalDataSource.insertTvWatchlist(testTvTable))
+          .thenThrow(DatabaseException('Failed to add watchlist'));
+      // act
+      final result = await repository.saveWatchlist(testTVDetail);
+      // assert
+      expect(result, Left(DatabaseFailure('Failed to add watchlist')));
+    });
+  });
+
+  
+  group('remove watchlist', () {
+    test('should return success message when remove successful', () async {
+      // arrange
+      when(mockLocalDataSource.removeTvWatchlist(TvTable.fromEntity(testTVDetail)))
+          .thenAnswer((_) async => 'Removed from watchlist');
+      // act
+      final result = await repository.removeWatchlist(testTVDetail);
+      // assert
+      expect(result, Right('Removed from watchlist'));
+    });
+
+    test('should return DatabaseFailure when remove unsuccessful', () async {
+      // arrange
+      when(mockLocalDataSource.removeTvWatchlist(testTvTable))
+          .thenThrow(DatabaseException('Failed to remove watchlist'));
+      // act
+      final result = await repository.removeWatchlist(testTVDetail);
+      // assert
+      expect(result, Left(DatabaseFailure('Failed to remove watchlist')));
+    });
+  });
+
+  group('get watchlist status', () {
+    test('should return watch status whether data is found', () async {
+      // arrange
+      final tId = 1;
+      when(mockLocalDataSource.getTvById(tId)).thenAnswer((_) async => null);
+      // act
+      final result = await repository.isAddedToWatchlist(tId);
+      // assert
+      expect(result, false);
+    });
+  });
+
+  group('get watchlist movies', () {
+    test('should return list of Movies', () async {
+      // arrange
+       when(mockLocalDataSource.getWatchlistTv())
+          .thenAnswer((_) async => [testTvTable]);
+      // act
+      final result = await repository.getWatchlistTv();
+      // assert
+      final resultList = result.getOrElse(() => []);
+      expect(resultList, [testWatchlistTV]);
+    });
+  });
 }
+
+

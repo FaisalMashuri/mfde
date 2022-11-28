@@ -1,6 +1,5 @@
 import 'package:inti/inti.dart';
-
-import 'package:ditonton/domain/entities/movie.dart';
+import 'package:movie/movie.dart';
 import 'package:ditonton/domain/usecases/search_movies.dart';
 import 'package:flutter/foundation.dart';
 

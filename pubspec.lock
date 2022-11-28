@@ -464,6 +464,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.3.0"
+  movie:
+    dependency: "direct main"
+    description:
+      path: movie
+      relative: true
+    source: path
+    version: "0.0.1"
   nested:
     dependency: transitive
     description:
@@ -589,7 +596,7 @@ packages:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.0.3"
+    version: "6.0.4"
   pub_semver:
     dependency: transitive
     description:
@@ -658,13 +665,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.1+1"
-  sqflite_sqlcipher:
-    dependency: transitive
-    description:
-      name: sqflite_sqlcipher
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.1.1+1"
   stack_trace:
     dependency: transitive
     description:

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:dartz/dartz.dart';
+import 'package:ditonton/data/models/tv_series_detail.dart';
 import 'package:inti/inti.dart' as inti;
 import 'package:ditonton/data/datasources/tv_series_local_data_source.dart';
 import 'package:ditonton/data/datasources/tv_series_remote_data_source.dart';
@@ -90,7 +91,7 @@ class TvRepositoryImpl implements TvRepository {
       return Left(DatabaseFailure(e.message));
     } catch (e) {
       // throw e;
-      return Left(DatabaseFailure("error"));
+      return Left(DatabaseFailure("Failed to add watchlist"));
     }
   }
 
@@ -103,6 +104,9 @@ class TvRepositoryImpl implements TvRepository {
       return Right(result);
     } on DatabaseException catch (e) {
       return Left(DatabaseFailure(e.message));
+    }catch (e) {
+      // throw e;
+      return Left(DatabaseFailure("Failed to remove watchlist"));
     }
   }
 

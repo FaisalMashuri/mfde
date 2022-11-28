@@ -1,30 +1,23 @@
 import 'package:inti/inti.dart';
 import 'package:about/about.dart';
+import 'package:movie/movie.dart';
 import 'package:ditonton/presentation/pages/home_tv_series_page.dart';
-import 'package:ditonton/presentation/pages/movie_detail_page.dart';
-import 'package:ditonton/presentation/pages/home_movie_page.dart';
+
 import 'package:ditonton/presentation/pages/now_playing_tv_series_page.dart';
-import 'package:ditonton/presentation/pages/popular_movies_page.dart';
+
 import 'package:ditonton/presentation/pages/popular_tv_series.dart';
 import 'package:ditonton/presentation/pages/search_page.dart';
 import 'package:ditonton/presentation/pages/search_tv_series_page.dart';
-import 'package:ditonton/presentation/pages/top_rated_movies_page.dart';
 import 'package:ditonton/presentation/pages/top_rated_tv_series.dart';
 import 'package:ditonton/presentation/pages/tv_series_detail_page.dart';
-import 'package:ditonton/presentation/pages/watchlist_movies_page.dart';
 import 'package:ditonton/presentation/pages/watchlist_tv_series_page.dart';
-import 'package:ditonton/presentation/provider/movie_detail_notifier.dart';
-import 'package:ditonton/presentation/provider/movie_list_notifier.dart';
 import 'package:ditonton/presentation/provider/movie_search_notifier.dart';
 import 'package:ditonton/presentation/provider/now_playing_tv_series_notifier.dart';
-import 'package:ditonton/presentation/provider/popular_movies_notifier.dart';
 import 'package:ditonton/presentation/provider/popular_tv_series_notifier.dart';
-import 'package:ditonton/presentation/provider/top_rated_movies_notifier.dart';
 import 'package:ditonton/presentation/provider/top_rated_tv_series_notifier.dart';
 import 'package:ditonton/presentation/provider/tv_detail_notifier.dart';
 import 'package:ditonton/presentation/provider/tv_series_list_notifier.dart';
 import 'package:ditonton/presentation/provider/tv_series_search_notifier.dart';
-import 'package:ditonton/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:ditonton/presentation/provider/watchlist_tv_series_notifier.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -118,7 +111,8 @@ class MyApp extends StatelessWidget {
             case HomeTvSeriesPage.ROUTE_NAME:
               return MaterialPageRoute(builder: (_) => HomeTvSeriesPage());
             case NowPlayingTvSeriesPage.ROUTE_NAME:
-              return MaterialPageRoute(builder: (_) => NowPlayingTvSeriesPage());
+              return MaterialPageRoute(
+                  builder: (_) => NowPlayingTvSeriesPage());
             case SearchPage.ROUTE_NAME:
               return CupertinoPageRoute(builder: (_) => SearchPage());
             case SearchTvPage.ROUTE_NAME:

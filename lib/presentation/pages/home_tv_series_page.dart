@@ -1,14 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:inti/inti.dart';
+import 'package:movie/movie.dart';
 import 'package:ditonton/domain/entities/tv_series.dart';
 import 'package:about/about.dart';
-import 'package:ditonton/presentation/pages/home_movie_page.dart';
 import 'package:ditonton/presentation/pages/now_playing_tv_series_page.dart';
 import 'package:ditonton/presentation/pages/popular_tv_series.dart';
 import 'package:ditonton/presentation/pages/search_tv_series_page.dart';
 import 'package:ditonton/presentation/pages/top_rated_tv_series.dart';
 import 'package:ditonton/presentation/pages/tv_series_detail_page.dart';
-import 'package:ditonton/presentation/pages/watchlist_movies_page.dart';
 import 'package:ditonton/presentation/pages/watchlist_tv_series_page.dart';
 import 'package:ditonton/presentation/provider/tv_series_list_notifier.dart';
 import 'package:flutter/material.dart';
