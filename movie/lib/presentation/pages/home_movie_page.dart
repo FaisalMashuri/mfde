@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:ditonton/presentation/pages/home_tv_series_page.dart';
-import 'package:ditonton/presentation/pages/search_page.dart';
-import 'package:ditonton/presentation/pages/watchlist_tv_series_page.dart';
+import 'package:search/search.dart';
+import "package:tv/tv.dart";
 import 'package:inti/inti.dart';
 import 'package:movie/movie.dart';
 import 'package:about/about.dart';

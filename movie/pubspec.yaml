@@ -16,8 +16,14 @@ dependencies:
   equatable: 
   provider: ^6.0.4
   flutter_rating_bar: ^4.0.0
+  about:
+    path: ../about
   inti:
     path: ../inti
+  tv:
+    path: ../tv
+  search:
+    path: ../search
   ditonton:
     path: ../
 

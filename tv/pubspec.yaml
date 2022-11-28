@@ -1,7 +1,7 @@
 name: tv
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
+# homepage:
 publish_to: none
 
 environment:
@@ -11,12 +11,30 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http:
+  dartz: 
+  equatable: 
+  provider: ^6.0.4
+  flutter_rating_bar: ^4.0.0
+  cached_network_image:
+  about:
+    path: ../about
+  movie:
+    path: ../movie
+  inti:
+    path: ../inti
+  search:
+    path: ../search
+  ditonton:
+    path: ../
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-
+  mockito: ^5.0.8
+  build_runner: ^2.0.4
+  
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
