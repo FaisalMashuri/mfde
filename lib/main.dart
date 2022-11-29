@@ -19,44 +19,48 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => di.locator<NowPlayingTvSeriesNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<NowPlayingTvSeriesBloc>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<WatchlistTvSeriesNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<PopularTvBloc>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TvSeriesListNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<TopRatedTvBloc>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<PopularTvSeriesNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<TvDetailBloc>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<AllTopTvNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<TvRecommendationsBloc>(),
         ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TvDetailNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieListNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<MovieDetailNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<TopRatedMoviesNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<PopularMoviesNotifier>(),
-        ),
-        ChangeNotifierProvider(
-          create: (_) => di.locator<WatchlistMovieNotifier>(),
+        BlocProvider(
+          create: (_) => di.locator<TvWatchlistBloc>(),
         ),
         BlocProvider(
           create: (_) => di.locator<SearchMovieBloc>(),
         ),
         BlocProvider(
           create: (_) => di.locator<SearchTvBloc>(),
+        ),
+        // Movie Bloc
+        BlocProvider(
+          create: (_) => di.locator<NowPlayingMoviesBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<PopularMoviesBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<TopRatedMoviesBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<MovieDetailBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<MovieRecommendationsBloc>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<MovieWatchlistBloc>(),
         ),
       ],
       child: MaterialApp(
