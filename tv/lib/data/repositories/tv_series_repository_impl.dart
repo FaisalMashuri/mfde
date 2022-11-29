@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:dartz/dartz.dart';
 import 'package:inti/inti.dart' as inti;
 import "package:tv/tv.dart";
+import "package:tv/tv.dart";
 import 'package:inti/inti.dart';
 
 
@@ -18,13 +19,12 @@ class TvRepositoryImpl implements TvRepository {
   Future<Either<inti.Failure, List<TvSeries>>> getNowPlayingTv() async {
     try {
       final result = await remoteDataSource.getNowPlayingTv();
+      print(result);
       return Right(result.map((model) => model.toEntity()).toList());
     } on ServerException {
       return Left(inti.ServerFailure(''));
     } on SocketException {
       return Left(inti.ConnectionFailure(inti.failedConnect));
-    }on TlsException {
-      return Left(SSLFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -37,8 +37,6 @@ class TvRepositoryImpl implements TvRepository {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure(failedConnect));
-    }on TlsException {
-      return Left(SSLFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -51,8 +49,6 @@ class TvRepositoryImpl implements TvRepository {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure(failedConnect));
-    }on TlsException {
-      return Left(SSLFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -65,8 +61,6 @@ class TvRepositoryImpl implements TvRepository {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure(failedConnect));
-    }on TlsException {
-      return Left(SSLFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
@@ -79,8 +73,6 @@ class TvRepositoryImpl implements TvRepository {
       return Left(ServerFailure(''));
     } on SocketException {
       return Left(ConnectionFailure(failedConnect));
-    }on TlsException {
-      return Left(SSLFailure('CERTIFICATE_VERIFY_FAILED'));
     }
   }
 
