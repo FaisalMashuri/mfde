@@ -3,7 +3,6 @@ import 'package:dartz/dartz.dart';
 import 'package:movie/movie.dart';
 import 'package:inti/inti.dart';
 
-
 class MovieRepositoryImpl implements MovieRepository {
   final MovieRemoteDataSource remoteDataSource;
   final MovieLocalDataSource localDataSource;
