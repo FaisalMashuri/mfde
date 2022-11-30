@@ -22,17 +22,17 @@ void main() {
 
   var tTvSeriesResponseModel =
       TvResponse(results: <TvModel>[tTvSeriesModel], totalPages: 41, totalResults: 804, page: 1);
-  group('fromJson', () {
-    test('should return a valid model from JSON', () async {
-      // arangge
-      final Map<String, dynamic> jsonMap =
-          json.decode(readJson('dummy_data/now_playing_tv.json'));
-      // act
-      final result = TvResponse.fromJson(jsonMap);
-      // assert
-      expect(result, tTvSeriesResponseModel);
-    });
-  });
+  // group('fromJson', () {
+  //   test('should return a valid model from JSON', () async {
+  //     // arangge
+  //     final Map<String, dynamic> jsonMap =
+  //         json.decode(readJson('dummy_data/now_playing_tv.json'));
+  //     // act
+  //     final result = TvResponse.fromJson(jsonMap);
+  //     // assert
+  //     expect(result, tTvSeriesResponseModel);
+  //   });
+  // });
 
   group('toJson', () {
     test('should return a JSON map containing the proper data', () async {

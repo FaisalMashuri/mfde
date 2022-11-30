@@ -18,9 +18,9 @@
       "original_language": "en",
       "original_name": "Original Name",
       "overview": "Overview",
-      "popularity": 1,
+      "popularity": 1.0,
       "poster_path": "/path.jpg",
-      "vote_average": 1,
+      "vote_average": 1.0,
       "vote_count": 1
     }
   ],

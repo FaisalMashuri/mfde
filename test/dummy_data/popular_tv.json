@@ -3,7 +3,7 @@
   "results": [
     {
       "backdrop_path": "/path.jpg",
-      "first_air_date": "2019-07-09",
+      "first_air_date": "2022-08-05",
       "genre_ids": [
         1,
         2,
@@ -18,12 +18,12 @@
       "original_language": "en",
       "original_name": "Original Name",
       "overview": "Overview",
-      "popularity": 1,
+      "popularity": 1.0,
       "poster_path": "/path.jpg",
-      "vote_average": 1,
+      "vote_average": 1.0,
       "vote_count": 1
     }
   ],
-  "total_pages": 41,
-  "total_results": 804
+  "total_pages": 6767,
+  "total_results": 135340
 }
