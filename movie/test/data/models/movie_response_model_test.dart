@@ -28,6 +28,7 @@ void main() {
       // arrange
       final Map<String, dynamic> jsonMap =
           json.decode(readJson('dummy_data/now_playing.json'));
+
       // act
       final result = MovieResponse.fromJson(jsonMap);
       // assert
