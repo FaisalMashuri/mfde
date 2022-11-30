@@ -6,7 +6,6 @@ import 'package:movie/movie.dart';
 import 'package:about/about.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 class HomeMoviePage extends StatefulWidget {
   static const ROUTE_NAME = '/home';
   @override
@@ -84,6 +83,7 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
         actions: [
           IconButton(
             onPressed: () {
+              
               Navigator.pushNamed(context, SearchPage.ROUTE_NAME);
             },
             icon: Icon(Icons.search),

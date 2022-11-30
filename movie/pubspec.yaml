@@ -21,6 +21,7 @@ dependencies:
   rxdart:
   mockito: ^5.3.2
   build_runner: ^2.0.4
+  firebase_crashlytics:
   bloc_test: ^9.0.0
   mocktail: ^0.3.0
   about:
