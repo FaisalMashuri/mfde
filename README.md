@@ -1,5 +1,12 @@
 # a199-flutter-expert-project
+## Screenshot Codemagic
+![image](./ss/Codemagic.jpg)
 
+## ScreenShot Analytics
+![image](./ss/Analytics.jpg)
+
+## ScreenShot Crashlitycs
+![image](./ss/Crashlytics.jpg)
 Repository ini merupakan starter project submission kelas Flutter Expert Dicoding Indonesia.
 
 ---
